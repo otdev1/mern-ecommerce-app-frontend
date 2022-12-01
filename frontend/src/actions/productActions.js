@@ -6,6 +6,8 @@ import {
          PRODUCT_REVIEW_SAVE_REQUEST, PRODUCT_REVIEW_SAVE_FAIL, PRODUCT_REVIEW_SAVE_SUCCESS,
        } from "../constants/productConstants";
 
+import { API_URL } from "../constants/apiURL";
+
 import axios from "axios";
 
 // const listProducts = () => async (dispatch) => {
@@ -42,7 +44,7 @@ const listProducts = ( category = '', searchKeyword = '', sortOrder = '' ) => as
         network/http requests*/
 
       const { data } = await axios.get(
-        '/api/products?category=' +
+        API_URL + '/api/products?category=' +
           category +
           '&searchKeyword=' +
           searchKeyword +
