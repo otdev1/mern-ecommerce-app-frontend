@@ -43,16 +43,8 @@ const listProducts = ( category = '', searchKeyword = '', sortOrder = '' ) => as
         can change the UI in unexpected ways are executed, in this case these operations are 
         network/http requests*/
 
-      /*const { data } = await axios.get(
-        API_URL + '/api/products?category=' +
-          category +
-          '&searchKeyword=' +
-          searchKeyword +
-          '&sortOrder=' +
-          sortOrder
-      );*/
       const { data } = await axios.get(
-          `${API_URL}/api/products?category=` +
+        API_URL + '/api/products?category=' +
           category +
           '&searchKeyword=' +
           searchKeyword +
