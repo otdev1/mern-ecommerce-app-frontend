@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import Rating from '../components/Rating';
 
-//import Select from 'react-select';
+import Select from 'react-select';
 
 function HomeScreen(props) {
     //return <div>HomeScreen</div> 
