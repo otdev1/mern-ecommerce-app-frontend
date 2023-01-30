@@ -8,6 +8,8 @@ import {
 
 import { API_URL } from "../constants/apiURL";
 
+
+
 import axios from "axios";
 
 // const listProducts = () => async (dispatch) => {
@@ -50,7 +52,7 @@ const listProducts = ( category = '', searchKeyword = '', sortOrder = '' ) => as
           searchKeyword +
           '&sortOrder=' +
           sortOrder
-      ); //the result contained in the response to the request sent (using axios) to the server is stored in data
+      );//the result contained in the response to the request sent (using axios) to the server is stored in data
 
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
       //each dispatch has an object and the object has a type and a payload
