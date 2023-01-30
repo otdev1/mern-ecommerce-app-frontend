@@ -6,6 +6,8 @@ import {
          PRODUCT_REVIEW_SAVE_REQUEST, PRODUCT_REVIEW_SAVE_FAIL, PRODUCT_REVIEW_SAVE_SUCCESS,
        } from "../constants/productConstants";
 
+import { API_URL } from "../constants/apiURL";
+
 import axios from "axios";
 
 // const listProducts = () => async (dispatch) => {
@@ -42,7 +44,7 @@ const listProducts = ( category = '', searchKeyword = '', sortOrder = '' ) => as
         network/http requests*/
 
       const { data } = await axios.get(
-        '/api/products?category=' +
+        API_URL + '/api/products?category=' +
           category +
           '&searchKeyword=' +
           searchKeyword +
@@ -151,7 +153,7 @@ const detailsProduct = (productId) => async (dispatch) => {
 
       dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
 
-      const { data } = await axios.get('/api/products/' + productId);
+      const { data } = await axios.get( API_URL + '/api/products/' + productId);
       /*object returned by axios has a property called data, this property contains the product details
       of the product with the id of productId*/
 
