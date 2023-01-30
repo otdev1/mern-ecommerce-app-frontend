@@ -2,10 +2,12 @@ import axios from "axios";
 import Cookie from "js-cookie";
 import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING, CART_SAVE_PAYMENT } from "../constants/cartConstants";
 
+import { API_URL } from "../constants/apiURL";
+
 const addToCart = (productId, qty) => async (dispatch, getState) => {
     //getState is made available by redux-thunk  middleware
     try {
-        const { data } = await axios.get('/api/products/' + productId);
+        const { data } = await axios.get( API_URL + '/api/products/' + productId);
 
         dispatch({ type: CART_ADD_ITEM, 
                    payload: {

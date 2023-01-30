@@ -8,8 +8,6 @@ import {
 
 import { API_URL } from "../constants/apiURL";
 
-
-
 import axios from "axios";
 
 // const listProducts = () => async (dispatch) => {
@@ -115,7 +113,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
 
     if (!product._id) {
       /*product id does not exist, this means a new product is being created*/
-      const { data } = await axios.post('/api/products', product, {
+      const { data } = await axios.post( API_URL + '/api/products', product, {
         headers: {
           Authorization: 'Bearer ' + userInfo.token, //token is provided by getState
         },
@@ -127,7 +125,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
     } 
     else {
       /*product id exists, this means a product is being editted*/
-      const { data } = await axios.put('/api/products/' + product._id,
+      const { data } = await axios.put( API_URL + '/api/products/' + product._id,
         product,
         {
           headers: {
@@ -177,7 +175,7 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
 
     dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
 
-    const { data } = await axios.delete('/api/products/' + productId, {
+    const { data } = await axios.delete( API_URL + '/api/products/' + productId, {
 
       headers: {
         Authorization: 'Bearer ' + userInfo.token,
@@ -204,7 +202,7 @@ const saveProductReview = (productId, review) => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: review });
 
     const { data } = await axios.post(
-      `/api/products/${productId}/reviews`,
+      API_URL + `/api/products/${productId}/reviews`,
       review, //the review is sent as the body
       {
         headers: {

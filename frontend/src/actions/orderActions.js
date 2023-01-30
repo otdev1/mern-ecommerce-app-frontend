@@ -7,6 +7,8 @@ import { ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL,
          ORDER_DELETE_REQUEST, ORDER_DELETE_SUCCESS, ORDER_DELETE_FAIL 
         } from "../constants/orderConstants";
 
+import { API_URL } from "../constants/apiURL";
+
 const createOrder = (order) => async (dispatch, getState) => {
     try {
 
@@ -14,7 +16,7 @@ const createOrder = (order) => async (dispatch, getState) => {
 
       const { userSignin: { userInfo } } = getState();
 
-      const { data: { data: newOrder } } = await axios.post("/api/orders", order, {
+      const { data: { data: newOrder } } = await axios.post( API_URL + '/api/orders', order, {
                                                  headers: {
                                                             Authorization: ' Bearer ' + userInfo.token
                                                           }
@@ -36,7 +38,7 @@ const detailsOrder = (orderId) => async (dispatch, getState) => {
 
       const { userSignin: { userInfo } } = getState();
 
-      const { data } = await axios.get("/api/orders/" + orderId, {
+      const { data } = await axios.get( API_URL + '/api/orders/' + orderId, {
                                         headers:
                                             { Authorization: 'Bearer ' + userInfo.token }
                                         });
@@ -58,7 +60,7 @@ const payOrder = (order, paymentResult) => async (dispatch, getState) => {
 
     const { userSignin: { userInfo } } = getState();
 
-    const { data } = await axios.put("/api/orders/" + order._id + "/pay", paymentResult, {
+    const { data } = await axios.put( API_URL + '/api/orders/' + order._id + '/pay', paymentResult, {
                                                   headers:
                                                     { Authorization: 'Bearer ' + userInfo.token }
                                                 });
@@ -103,7 +105,7 @@ const listMyOrders = ( { userId } ) => async (dispatch, getState) => {
 
     const { userSignin: { userInfo } } = getState();
 
-    const { data } = await axios.get("/api/orders/mine/" + userId, {
+    const { data } = await axios.get( API_URL + '/api/orders/mine/' + userId, {
                                                             headers:
                                                               { Authorization: 'Bearer ' + userInfo.token }
                                                           });
@@ -126,7 +128,7 @@ const listOrders = () => async (dispatch, getState) => {
 
     const { userSignin: { userInfo } } = getState();
 
-    const { data } = await axios.get("/api/orders", {
+    const { data } = await axios.get( API_URL + '/api/orders', {
                                       headers:
                                         { Authorization: 'Bearer ' + userInfo.token }
                                     });
@@ -150,7 +152,7 @@ const deleteOrder = (orderId) => async (dispatch, getState) => {
 
     const { userSignin: { userInfo } } = getState();
 
-    const { data } = await axios.delete("/api/orders/" + orderId, {
+    const { data } = await axios.delete( API_URL + '/api/orders/' + orderId, {
                                           headers:
                                             { Authorization: 'Bearer ' + userInfo.token }
                                         });
