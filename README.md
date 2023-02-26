@@ -1,5 +1,7 @@
 The link to the live site that this code implements is https://ot-amazona.onrender.com/ and it replicates some of the features and functionality of https://www.amazon.com/
 
+The corresponding backend code of this repo is https://github.com/otdev1/mern-ecommerce-app-backend/tree/main
+
 The Sign-In credentials for the guest user are:
 Username - guestuser@guest.com
 Password - password
