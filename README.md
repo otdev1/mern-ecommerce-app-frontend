@@ -3,7 +3,7 @@ The link to the web application that this code implements is https://ot-amazona.
 The repo for the corresponding backend code of this project is https://github.com/otdev1/mern-ecommerce-app-backend/tree/main
 
 The Sign-In credentials for the guest user are:
-Username - guestuser@guest.com
+Email - guestuser@guest.com
 Password - password
 
 The PayPal sandbox user account credentials are: 
