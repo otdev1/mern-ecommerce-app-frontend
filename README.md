@@ -2,6 +2,8 @@ The link to the web application that this code implements is https://ot-amazona.
 
 The repo for the corresponding backend code of this project is https://github.com/otdev1/mern-ecommerce-app-backend/tree/main
 
+Screenshots of various webpages of this project can be viewed at - https://drive.google.com/drive/folders/1m3oImz3Jk2RPDe0-CnJVqH-hViqNFKjg?usp=drive_link
+
 The Sign-In credentials for the guest user are:
 Email - guestuser@guest.com
 Password - password
