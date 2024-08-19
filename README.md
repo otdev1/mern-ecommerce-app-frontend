@@ -12,6 +12,8 @@ The PayPal sandbox user account credentials are:
 Email - sb-m0hdg2901075@personal.example.com
 Password - iHQp<v97
 
+Please note that due to the placement of a time limit by the render.com hosting service on server uptime based on the absence and presence of request traffic, there is a 50-second delay in functionality and content delivery.
+
 On the site users can:
 
 -	view a list of all products, change the order in which they are displayed as well as filter them based on category
